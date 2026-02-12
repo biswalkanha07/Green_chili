@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, ShoppingCart } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import { Navbar as MainNavbar } from './Navbar';
 import { Footer } from './Footer';
 

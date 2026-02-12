@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 
 interface CategoryFilterProps {
     activeCategory: string;

@@ -1,0 +1,4 @@
+# Redirects for Single Page Application
+# This ensures all routes work properly with client-side routing
+
+/*    /index.html   200

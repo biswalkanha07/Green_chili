@@ -1,73 +1,179 @@
-# React + TypeScript + Vite
+# 🌶️ Green Chili Restaurant Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive restaurant website built with React, TypeScript, and Vite. Features a beautiful UI with Tailwind CSS and smooth animations.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern Design**: Clean and responsive UI with Tailwind CSS
+- **TypeScript**: Type-safe code for better development experience
+- **Fast Performance**: Built with Vite for lightning-fast builds
+- **Smooth Animations**: Engaging user experience with motion effects
+- **Menu Display**: Showcasing chef specials and dishes
+- **Booking System**: Easy table reservation interface
+- **Delivery Information**: Clear delivery zones and availability
 
-## React Compiler
+## 📦 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **Motion** - Animation library
+- **Lucide React** - Beautiful icons
 
-## Expanding the ESLint configuration
+## 🛠️ Installation & Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
+- Node.js 18+ installed on your system
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Steps
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/biswalkanha07/Green_chili.git
+   cd Green_chili
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+   
+   The app will be available at `http://localhost:5173`
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+5. **Preview production build**
+   ```bash
+   npm run preview
+   ```
+
+## 🌐 Deploy to Netlify
+
+### Method 1: Using Netlify CLI (Recommended)
+
+1. **Install Netlify CLI**
+   ```bash
+   npm install -g netlify-cli
+   ```
+
+2. **Login to Netlify**
+   ```bash
+   netlify login
+   ```
+
+3. **Deploy**
+   ```bash
+   netlify deploy --prod
+   ```
+
+### Method 2: Using Netlify Web Interface
+
+1. Go to [Netlify](https://app.netlify.com/)
+2. Click "Add new site" → "Import an existing project"
+3. Connect your GitHub account and select the `Green_chili` repository
+4. Netlify will automatically detect the build settings from `netlify.toml`
+5. Click "Deploy site"
+
+**That's it!** Netlify will automatically:
+- Run `npm run build`
+- Deploy the `dist` folder
+- Set up SPA routing
+- Provide you with a live URL
+
+### Method 3: Drag & Drop
+
+1. Build the project locally:
+   ```bash
+   npm run build
+   ```
+
+2. Go to [Netlify Drop](https://app.netlify.com/drop)
+3. Drag and drop the `dist` folder
+4. Your site will be live instantly!
+
+## 📁 Project Structure
+
+```
+Green_chili/
+├── public/              # Static assets
+├── src/
+│   ├── components/      # React components
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Hero.tsx
+│   │   ├── ChefSpecial.tsx
+│   │   ├── DishCard.tsx
+│   │   ├── BookingForm.tsx
+│   │   └── ...
+│   ├── App.tsx          # Main app component
+│   ├── App.css          # Main styles
+│   ├── main.tsx         # Entry point
+│   └── index.css        # Global styles
+├── netlify.toml         # Netlify configuration
+├── package.json         # Dependencies and scripts
+├── tsconfig.json        # TypeScript configuration
+├── vite.config.ts       # Vite configuration
+└── tailwind.config.js   # Tailwind CSS configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔧 Available Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📝 Environment Variables
+
+This project doesn't currently use environment variables. If you need to add any in the future:
+
+1. Create a `.env` file in the root directory
+2. Add your variables with `VITE_` prefix
+3. Access them in code using `import.meta.env.VITE_YOUR_VARIABLE`
+
+For Netlify deployment, add environment variables in:
+**Site Settings → Environment Variables**
+
+## 🎨 Customization
+
+- **Colors**: Modify Tailwind configuration or CSS variables in `src/index.css`
+- **Components**: Edit component files in `src/components/`
+- **Assets**: Add images and icons to `public/` folder
+
+## 🐛 Troubleshooting
+
+### Build fails on Netlify
+- Check Node version in `netlify.toml` matches your local version
+- Clear Netlify cache and retry deployment
+- Check build logs for specific errors
+
+### Routing issues after deployment
+- The `netlify.toml` and `public/_redirects` files handle SPA routing
+- Ensure these files are committed to your repository
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👨‍💻 Author
+
+**Biswal Kanha**
+- GitHub: [@biswalkanha07](https://github.com/biswalkanha07)
+
+## 🙏 Acknowledgments
+
+- Built with love for food enthusiasts
+- Inspired by modern restaurant web design trends
+
+---
+
+**Enjoy your Green Chili experience!** 🌶️✨
